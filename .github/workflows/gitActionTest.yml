@@ -4,6 +4,6 @@ jobs:
   my-job:
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.4
       - name: run linter 
-        run: make lint
+        run: npx eslint .
