@@ -22,5 +22,9 @@
   "homepage": "https://github.com/georgegla/frontend-project-lvl1#readme",
   "dependencies": {
     "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb-base": "^15.0.0"
   }
 }
