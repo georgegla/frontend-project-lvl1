@@ -1,5 +1,3 @@
 # Автоматические тесты
-
-После завершения всех шагов в проекте, вам станут доступны автоматические тесты. Тесты запускаются на каждый коммит - после завершения всех заданий в интерфейсе Хекслета, сделайте коммит, и тесты заработают автоматически.
-
-Файл hexlet-check.yml отвечает за запуск этих тестов - не удаляйте этот файл, не редактируйте его и не переименовывайте репозиторий.
+<a href="https://codeclimate.com/github/georgegla/frontend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/5d9a2bac2d239c3b62d9/maintainability" /></a>
+<a href="https://codeclimate.com/github/georgegla/frontend-project-lvl1/test_coverage"><img src="https://api.codeclimate.com/v1/badges/5d9a2bac2d239c3b62d9/test_coverage" /></a>
