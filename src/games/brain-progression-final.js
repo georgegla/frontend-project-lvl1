@@ -4,11 +4,11 @@ import getRandomNumber from '../getRandomNumber.js';
 const getGameData = () => {
   console.log('What number is missing in the progression?');
   const result = [];
-  const d = getRandomNumber(1, 9);
+  const element = getRandomNumber(1, 9);
   let num = getRandomNumber(0, 21);
   result.push(num);
   for (let i = 0; i <= 8; i += 1) {
-    num += d;
+    num += element;
     result.push(num);
   }
   const randomValueArray = Math.floor(Math.random() * result.length);
