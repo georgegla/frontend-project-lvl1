@@ -7,7 +7,7 @@ const game = (getGameData) => {
   console.log(`Hello, ${name}!`);
   for (let i = 0; i < counter; i += 1) {
     const [question, answer] = getGameData();
-    console.log(`Question ${question}`);
+    console.log(`Question: ${question}`);
     const answerUser = readlineSync.question('Your answer: ');
     if (answerUser === answer) {
       console.log('Correct!');
