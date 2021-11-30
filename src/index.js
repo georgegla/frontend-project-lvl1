@@ -13,7 +13,7 @@ const game = (getGameData) => {
       console.log('Correct!');
     } else {
       console.log(`${answerUser} is wrong answer ;(. Correct answer was ${answer}.`);
-      console.log(`Let's try again, ${name}`);
+      console.log(`Let's try again, ${name}!`);
       return;
     }
   }
