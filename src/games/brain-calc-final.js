@@ -10,7 +10,7 @@ const getGameData = () => {
   const number2 = getRandomNumber(1, 25);
   const operation = getRandomOper();
   console.log('What is the result of the expression?');
-  const question = `${number1}${operation}${number2}`;
+  const question = `${number1} ${operation} ${number2}`;
   const answer = eval(question);
   return [question, String(answer)];
 };
