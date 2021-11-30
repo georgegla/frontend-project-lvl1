@@ -6,10 +6,12 @@ const getRandomOper = () => {
   return (oper[getRandomNumber(0, 2)]);
 };
 const getGameData = () => {
-  const expression = `${getRandomNumber(1, 25)}${getRandomOper()}${getRandomNumber(1, 25)}`;
+  const number1 = getRandomNumber(1, 25);
+  const number2 = getRandomNumber(1, 25);
+  const operation = getRandomOper();
   console.log('What is the result of the expression?');
-  const question = expression;
-  const answer = eval(expression);
+  const question = `${number1}${operation}${number2}`;
+  const answer = eval(question);
   return [question, String(answer)];
 };
 const brainCalc = () => game(getGameData);
