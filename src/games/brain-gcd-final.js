@@ -1,9 +1,10 @@
 import game from '../index.js';
+import getRandomNumber from '../getRandomNumber.js';
 
-const getRandomNumber = (max = 100) => Math.floor(Math.random() * max);
 const getGameData = () => {
-  const num = getRandomNumber();
-  const num1 = getRandomNumber();
+  console.log('Find the greatest common divisor of given numbers.');
+  const num = getRandomNumber(1, 100);
+  const num1 = getRandomNumber(1, 100);
   const answer = [];
   const question = `${num} ${num1}`;
   for (let i = 1; i <= num || i <= num1; i += 1) {

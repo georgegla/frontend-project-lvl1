@@ -1,14 +1,12 @@
 import game from '../index.js';
-
-const getRandomNumber = (max = 3) => Math.floor(Math.random() * max);
+import getRandomNumber from '../getRandomNumber.js';
 
 const getRandomOper = () => {
   const oper = ['-', '+', '*'];
-  return (oper[getRandomNumber()]);
+  return (oper[getRandomNumber(0, 2)]);
 };
-const getRandomNumber1 = (max = 25) => Math.floor(Math.random() * max);
 const getGameData = () => {
-  const expression = `${getRandomNumber1()}${getRandomOper()}${getRandomNumber1()}`;
+  const expression = `${getRandomNumber(1, 25)}${getRandomOper()}${getRandomNumber(1, 25)}`;
   console.log('What is the result of the expression?');
   const question = expression;
   const answer = eval(expression);

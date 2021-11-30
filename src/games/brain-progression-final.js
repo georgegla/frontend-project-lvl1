@@ -1,12 +1,11 @@
 import game from '../index.js';
+import getRandomNumber from '../getRandomNumber.js';
 
-const getRandomNumber = () => Math.floor(Math.random() * 21) + 1;
-const getRandomNumber1 = () => Math.floor(Math.random() * 9) + 1;
 const getGameData = () => {
   console.log('What number is missing in the progression?');
   const result = [];
-  const d = getRandomNumber1();
-  let num = getRandomNumber();
+  const d = getRandomNumber(1, 9);
+  let num = getRandomNumber(0, 21);
   result.push(num);
   for (let i = 0; i <= 8; i += 1) {
     num += d;
@@ -20,5 +19,5 @@ const getGameData = () => {
   const answer = value;
   return [question, String(answer)];
 };
-const brainpPrg = () => game(getGameData);
-export default brainpPrg;
+const brainPrg = () => game(getGameData);
+export default brainPrg;
