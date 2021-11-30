@@ -12,7 +12,8 @@ const game = (getGameData) => {
     if (answerUser === answer) {
       console.log('Correct!');
     } else {
-      console.log(`${answerUser} is wrong answer ;(. Correct answer was ${answer}. \n Let's try again, ${name}`);
+      console.log(`${answerUser} is wrong answer ;(. Correct answer was ${answer}.`);
+      console.log(`Let's try again, ${name}`);
       return;
     }
   }
