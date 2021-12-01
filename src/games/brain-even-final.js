@@ -1,5 +1,5 @@
-import getRandomNumber from '../getRandomNumber.js';
-import game from '../index.js';
+import getRandomNumber from '../utils.js';
+import startGame from '../index.js';
 
 const parityNumber = (number) => number % 2 === 0;
 const getGameData = () => {
@@ -8,5 +8,5 @@ const getGameData = () => {
   const answer = parityNumber(question) ? 'yes' : 'no';
   return [question, String(answer)];
 };
-const brainEven = () => game(getGameData);
+const brainEven = () => startGame(getGameData);
 export default brainEven;

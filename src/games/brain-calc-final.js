@@ -1,5 +1,5 @@
-import game from '../index.js';
-import getRandomNumber from '../getRandomNumber.js';
+import startGame from '../index.js';
+import getRandomNumber from '../utils.js';
 
 const calculate = (number1, number2, oper) => {
   switch (oper) {
@@ -23,5 +23,5 @@ const getGameData = () => {
   const answer = calculate(number1, number2, operation);
   return [question, String(answer)];
 };
-const brainCalc = () => game(getGameData);
-export default brainCalc;
+const calculateExpression = () => startGame(getGameData);
+export default calculateExpression;
