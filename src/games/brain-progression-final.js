@@ -3,10 +3,11 @@ import getRandomNumber from '../utils.js';
 
 const calcProgression = (num, element, lengthProgression) => {
   const result = [];
+  let num1 = num;
   result.push(num);
   for (let i = 0; i <= lengthProgression; i += 1) {
-    num += element;
-    result.push(num);
+    num1 += element;
+    result.push(num1);
   }
   return result;
 };
