@@ -15,5 +15,5 @@ const getGameData = () => {
   const answer = isPrime(question) ? 'yes' : 'no';
   return [question, answer];
 };
-const brainPrm = () => startGame(getGameData);
-export default brainPrm;
+const calculatePrimeNumber = () => startGame(getGameData);
+export default calculatePrimeNumber;

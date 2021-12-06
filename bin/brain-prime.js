@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import brainPrm from '../src/games/brain-prime-final.js';
+import calculatePrimeNumber from '../src/games/brain-prime-final.js';
 
-brainPrm();
+calculatePrimeNumber();

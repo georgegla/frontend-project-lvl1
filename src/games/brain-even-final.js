@@ -8,5 +8,5 @@ const getGameData = () => {
   const answer = parityNumber(question) ? 'yes' : 'no';
   return [question, String(answer)];
 };
-const brainEven = () => startGame(getGameData);
-export default brainEven;
+const calculateEven = () => startGame(getGameData);
+export default calculateEven;
