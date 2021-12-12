@@ -11,18 +11,23 @@ const calcProgression = (numberOfProgresion, differenceOfProgression, progressio
   }
   return result;
 };
-const getGameData = () => {
-  console.log('What number is missing in the progression?');
+
+const generateQA = () => {
   const differenceOfProgression = getRandomNumber(1, 9);
   const numberOfProgresion = getRandomNumber(0, 21);
-  const lengthProgression = 8;
-  const result = calcProgression(numberOfProgresion, differenceOfProgression, lengthProgression);
+  const progressionLength = 8;
+  const result = calcProgression(numberOfProgresion, differenceOfProgression, progressionLength);
   const secretElementPRG = result[getRandomNumber(0, result.length - 1)];
   const indexOfElementPRG = result.indexOf(secretElementPRG);
   result[indexOfElementPRG] = '..';
   const question = result.join(' ');
   const answer = secretElementPRG;
   return [question, String(answer)];
+};
+const getGameData = () => {
+  console.log('What number is missing in the progression?');
+  const questionAnswer = generateQA();
+  return questionAnswer;
 };
 const calculateProgression = () => startGame(getGameData);
 export default calculateProgression;

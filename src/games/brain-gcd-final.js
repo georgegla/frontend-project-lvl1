@@ -3,7 +3,7 @@ import getRandomNumber from '../utils.js';
 
 const calculateHightestDivisor = (num, num1) => {
   const divisors = [];
-  for (let i = 1; i <= num || i <= num1; i += 1) {
+  for (let i = 0; i <= num || i <= num1; i += 1) {
     if (num % i === 0 && num1 % i === 0) {
       divisors.push(i);
     }
