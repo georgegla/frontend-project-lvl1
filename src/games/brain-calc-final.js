@@ -18,10 +18,11 @@ const getGameData = () => {
   const number1 = getRandomNumber(1, 10);
   const number2 = getRandomNumber(1, 10);
   const operation = oper[getRandomNumber(0, oper.length - 1)];
-  console.log('What is the result of the expression?');
+  const questionString = 'What is the result of the expression?';
   const question = `${number1} ${operation} ${number2}`;
   const answer = calculate(number1, number2, operation);
-  return [question, String(answer)];
+  const rounds = [question, String(answer)];
+  return [questionString, rounds];
 };
 const calculateExpression = () => startGame(getGameData);
 export default calculateExpression;

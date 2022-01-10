@@ -25,9 +25,9 @@ const generateQA = () => {
   return [question, String(answer)];
 };
 const getGameData = () => {
-  console.log('What number is missing in the progression?');
-  const questionAnswer = generateQA();
-  return questionAnswer;
+  const questionString = 'What number is missing in the progression?';
+  const rounds = generateQA();
+  return [questionString, rounds];
 };
 const calculateProgression = () => startGame(getGameData);
 export default calculateProgression;

@@ -11,12 +11,13 @@ const calculateHightestDivisor = (num, num1) => {
   return divisors;
 };
 const getGameData = () => {
-  console.log('Find the greatest common divisor of given numbers.');
+  const questionString = 'Find the greatest common divisor of given numbers.';
   const num = getRandomNumber(1, 100);
   const num1 = getRandomNumber(1, 100);
   const answer = calculateHightestDivisor(num, num1);
   const question = `${num} ${num1}`;
-  return [question, String(answer[answer.length - 1])];
+  const rounds = [question, String(answer[answer.length - 1])];
+  return [questionString, rounds];
 };
 const calculateGcd = () => startGame(getGameData);
 export default calculateGcd;
