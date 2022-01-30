@@ -13,16 +13,31 @@ const calculate = (operand1, operand2, oper) => {
       return 'Operator not found!';
   }
 };
-const getGameData = () => {
+
+const generateRound = () => {
   const oper = ['-', '+', '*'];
   const number1 = getRandomNumber(1, 10);
   const number2 = getRandomNumber(1, 10);
   const operation = oper[getRandomNumber(0, oper.length - 1)];
-  const questionString = 'What is the result of the expression?';
-  const question = `${number1} ${operation} ${number2}`;
-  const answer = calculate(number1, number2, operation);
-  const rounds = [question, String(answer)];
-  return [questionString, rounds];
+
+  const question = [`${number1} ${operation} ${number2}`];
+  const answer = [calculate(number1, number2, operation)];
+  // const rounds = [question, String(answer)];
+
+  return [question, String(answer)];
 };
-const calculateExpression = () => startGame(getGameData);
+
+const calculateExpression = () => {
+  const gameDescription = 'What is the result of the expression?';
+
+  const rounds = [];
+  const numberOfRounds = 3;
+
+  for (let i = 0; i < numberOfRounds; i += 1) {
+    rounds.push(generateRound());
+  }
+
+  return startGame(gameDescription, rounds);
+};
+
 export default calculateExpression;

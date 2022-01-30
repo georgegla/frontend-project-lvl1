@@ -10,14 +10,25 @@ const calculateHightestDivisor = (num, num1) => {
   }
   return divisors;
 };
-const getGameData = () => {
-  const questionString = 'Find the greatest common divisor of given numbers.';
+
+const generateRound = () => {
   const num = getRandomNumber(1, 100);
   const num1 = getRandomNumber(1, 100);
+
   const answer = calculateHightestDivisor(num, num1);
   const question = `${num} ${num1}`;
-  const rounds = [question, String(answer[answer.length - 1])];
-  return [questionString, rounds];
+
+  return [question, String(answer[answer.length - 1])];
 };
-const calculateGcd = () => startGame(getGameData);
+const calculateGcd = () => {
+  const rounds = [];
+  const numberOfRounds = 3;
+
+  const gameDescription = 'Find the greatest common divisor of given numbers.';
+  for (let i = 0; i < numberOfRounds; i += 1) {
+    rounds.push(generateRound());
+  }
+  return startGame(gameDescription, rounds);
+};
+
 export default calculateGcd;

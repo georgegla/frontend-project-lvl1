@@ -9,12 +9,23 @@ const isPrime = (number) => {
   }
   return true;
 };
-const getGameData = () => {
-  const questionString = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
+const generateRound = () => {
   const question = getRandomNumber(2, 100);
   const answer = isPrime(question) ? 'yes' : 'no';
-  const rounds = [question, answer];
-  return [questionString, rounds];
+
+  return [question, answer];
 };
-const calculatePrimeNumber = () => startGame(getGameData);
+const calculatePrimeNumber = () => {
+  const rounds = [];
+  const numberOfRounds = 3;
+
+  const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
+  for (let i = 0; i < numberOfRounds; i += 1) {
+    rounds.push(generateRound());
+  }
+  return startGame(gameDescription, rounds);
+};
+
 export default calculatePrimeNumber;
