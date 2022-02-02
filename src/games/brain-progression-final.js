@@ -1,4 +1,4 @@
-import startGame from '../index.js';
+import { startGame, numberOfRounds } from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const calcProgression = (numberOfProgresion, differenceOfProgression, progressionLength) => {
@@ -34,7 +34,6 @@ const generateRound = () => {
 };
 const calculateProgression = () => {
   const rounds = [];
-  const numberOfRounds = 3;
 
   const gameDescription = 'What number is missing in the progression?';
 

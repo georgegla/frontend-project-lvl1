@@ -1,4 +1,4 @@
-import startGame from '../index.js';
+import { startGame, numberOfRounds } from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const calculateHightestDivisor = (num, num1) => {
@@ -22,7 +22,6 @@ const generateRound = () => {
 };
 const calculateGcd = () => {
   const rounds = [];
-  const numberOfRounds = 3;
 
   const gameDescription = 'Find the greatest common divisor of given numbers.';
   for (let i = 0; i < numberOfRounds; i += 1) {
