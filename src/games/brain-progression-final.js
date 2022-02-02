@@ -1,6 +1,8 @@
 import { startGame, numberOfRounds } from '../index.js';
 import getRandomNumber from '../utils.js';
 
+const gameDescription = 'What number is missing in the progression?';
+
 const calcProgression = (numberOfProgresion, differenceOfProgression, progressionLength) => {
   const result = [];
   let numberOfProgresion1 = numberOfProgresion;
@@ -32,10 +34,9 @@ const generateRound = () => {
   const rounds = generateQA();
   return rounds;
 };
+
 const calculateProgression = () => {
   const rounds = [];
-
-  const gameDescription = 'What number is missing in the progression?';
 
   for (let i = 0; i < numberOfRounds; i += 1) {
     rounds.push(generateRound());

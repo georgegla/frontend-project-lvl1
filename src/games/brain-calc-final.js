@@ -1,7 +1,9 @@
 import { startGame, numberOfRounds } from '../index.js';
 import getRandomNumber from '../utils.js';
 
-const calculate = (operand1, operand2, oper) => {
+const gameDescription = 'What is the result of the expression?';
+
+function calculate(operand1, operand2, oper) {
   switch (oper) {
     case '-':
       return operand1 - operand2;
@@ -12,7 +14,7 @@ const calculate = (operand1, operand2, oper) => {
     default:
       return 'Operator not found!';
   }
-};
+}
 
 const oper = ['-', '+', '*'];
 
@@ -28,8 +30,6 @@ const generateRound = () => {
 };
 
 const calculateExpression = () => {
-  const gameDescription = 'What is the result of the expression?';
-
   const rounds = [];
 
   for (let i = 0; i < numberOfRounds; i += 1) {
