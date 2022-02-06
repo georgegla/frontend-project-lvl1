@@ -17,10 +17,10 @@ const generateRound = () => {
   const num = getRandomNumber(1, 100);
   const num1 = getRandomNumber(1, 100);
 
-  const answer = calculateHightestDivisor(num, num1);
+  const divisors = calculateHightestDivisor(num, num1);
   const question = `${num} ${num1}`;
-
-  return [question, String(answer[answer.length - 1])];
+  const answer = divisors[divisors.length - 1];
+  return [question, String(answer)];
 };
 const calculateGcd = () => {
   const rounds = [];

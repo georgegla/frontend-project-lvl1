@@ -3,8 +3,8 @@ import getRandomNumber from '../utils.js';
 
 const gameDescription = 'What is the result of the expression?';
 
-function calculate(operand1, operand2, oper) {
-  switch (oper) {
+function calculate(operand1, operand2, operations) {
+  switch (operations) {
     case '-':
       return operand1 - operand2;
     case '+':
@@ -16,12 +16,12 @@ function calculate(operand1, operand2, oper) {
   }
 }
 
-const oper = ['-', '+', '*'];
+const operations = ['-', '+', '*'];
 
 const generateRound = () => {
   const number1 = getRandomNumber(1, 10);
   const number2 = getRandomNumber(1, 10);
-  const operation = oper[getRandomNumber(0, oper.length - 1)];
+  const operation = operations[getRandomNumber(0, operations.length - 1)];
 
   const question = `${number1} ${operation} ${number2}`;
   const answer = calculate(number1, number2, operation);

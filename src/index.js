@@ -11,10 +11,11 @@ const startGame = (gameDescription, rounds) => {
   console.log(gameDescription);
 
   for (let i = 0; i < numberOfRounds; i += 1) {
-    console.log(`Question: ${rounds[i][0]}`);
+    const [question, answer] = rounds[i];
+    console.log(`Question: ${question}`);
     const answerUser = readlineSync.question('Your answer: ');
-    if (answerUser !== rounds[i][1]) {
-      console.log(`${answerUser} is wrong answer ;(. Correct answer was ${rounds[i][1]}.`);
+    if (answerUser !== answer) {
+      console.log(`${answerUser} is wrong answer ;(. Correct answer was ${answer}.`);
       console.log(`Let's try again, ${name}!`);
 
       return;

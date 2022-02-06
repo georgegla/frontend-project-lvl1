@@ -3,36 +3,32 @@ import getRandomNumber from '../utils.js';
 
 const gameDescription = 'What number is missing in the progression?';
 
-const calcProgression = (numberOfProgresion, differenceOfProgression, progressionLength) => {
-  const result = [];
-  let numberOfProgresion1 = numberOfProgresion;
-  result.push(numberOfProgresion);
+const calcProgression = (startOfProgression, progressionStep, progressionLength) => {
+  const result = [startOfProgression];
+  let nextElement = startOfProgression;
 
   for (let i = 0; i <= progressionLength; i += 1) {
-    numberOfProgresion1 += differenceOfProgression;
-    result.push(numberOfProgresion1);
+    nextElement += progressionStep;
+    result.push(nextElement);
   }
   return result;
 };
 
-const generateQA = () => {
-  const differenceOfProgression = getRandomNumber(1, 9);
-  const numberOfProgresion = getRandomNumber(0, 21);
+const generateRound = () => {
+  const progressionStep = getRandomNumber(1, 9);
+  const startOfProgression = getRandomNumber(0, 21);
   const progressionLength = 8;
 
-  const result = calcProgression(numberOfProgresion, differenceOfProgression, progressionLength);
-  const secretElementPRG = result[getRandomNumber(0, result.length - 1)];
-  const indexOfElementPRG = result.indexOf(secretElementPRG);
+  const result = calcProgression(startOfProgression, progressionStep, progressionLength);
+
+  const answer = result[getRandomNumber(0, result.length - 1)];
+
+  const indexOfElementPRG = result.indexOf(answer);
   result[indexOfElementPRG] = '..';
 
   const question = result.join(' ');
-  const answer = secretElementPRG;
 
   return [question, String(answer)];
-};
-const generateRound = () => {
-  const rounds = generateQA();
-  return rounds;
 };
 
 const calculateProgression = () => {
