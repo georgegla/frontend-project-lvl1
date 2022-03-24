@@ -3,7 +3,7 @@ import getRandomNumber from '../utils.js';
 
 const gameDescription = 'What is the result of the expression?';
 
-function calculate(operand1, operand2, operations) {
+const calculate = (operand1, operand2, operations) => {
   switch (operations) {
     case '-':
       return operand1 - operand2;
@@ -14,7 +14,7 @@ function calculate(operand1, operand2, operations) {
     default:
       return 'Operator not found!';
   }
-}
+};
 
 const operations = ['-', '+', '*'];
 
