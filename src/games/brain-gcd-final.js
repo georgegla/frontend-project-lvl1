@@ -19,12 +19,12 @@ const generateRound = () => {
 
   const divisors = calculateHightestDivisor(num, num1);
   const question = `${num} ${num1}`;
-  const answer = divisors[divisors.length - 1];
-  return [question, String(answer)];
+  const answer = String(divisors[divisors.length - 1]);
+  return [question, answer];
 };
+
 const calculateGcd = () => {
   const rounds = [];
-
   for (let i = 0; i < numberOfRounds; i += 1) {
     rounds.push(generateRound());
   }

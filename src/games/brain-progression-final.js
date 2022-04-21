@@ -21,14 +21,14 @@ const generateRound = () => {
 
   const result = calcProgression(startOfProgression, progressionStep, progressionLength);
 
-  const answer = result[getRandomNumber(0, result.length - 1)];
+  const answer = String(result[getRandomNumber(0, result.length - 1)]);
 
   const indexOfElementPRG = result.indexOf(answer);
   result[indexOfElementPRG] = '..';
 
   const question = result.join(' ');
 
-  return [question, String(answer)];
+  return [question, answer];
 };
 
 const calculateProgression = () => {

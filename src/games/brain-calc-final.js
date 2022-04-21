@@ -3,8 +3,10 @@ import getRandomNumber from '../utils.js';
 
 const gameDescription = 'What is the result of the expression?';
 
-const calculate = (operand1, operand2, operations) => {
-  switch (operations) {
+const operators = ['-', '+', '*'];
+
+const calculate = (operand1, operand2, operator) => {
+  switch (operator) {
     case '-':
       return operand1 - operand2;
     case '+':
@@ -12,21 +14,19 @@ const calculate = (operand1, operand2, operations) => {
     case '*':
       return operand1 * operand2;
     default:
-      return 'Operator not found!';
+      throw new Error(`operator not found - '${operator}'`);
   }
 };
-
-const operations = ['-', '+', '*'];
 
 const generateRound = () => {
   const number1 = getRandomNumber(1, 10);
   const number2 = getRandomNumber(1, 10);
-  const operation = operations[getRandomNumber(0, operations.length - 1)];
+  const operation = operators[getRandomNumber(0, operators.length - 1)];
 
   const question = `${number1} ${operation} ${number2}`;
-  const answer = calculate(number1, number2, operation);
+  const answer = String(calculate(number1, number2, operation));
 
-  return [question, String(answer)];
+  return [question, answer];
 };
 
 const calculateExpression = () => {
