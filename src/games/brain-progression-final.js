@@ -21,11 +21,12 @@ const generateRound = () => {
 
   const result = calcProgression(startOfProgression, progressionStep, progressionLength);
 
-  const answer = String(result[getRandomNumber(0, result.length - 1)]);
+  const secretElement = result[getRandomNumber(0, result.length - 1)];
 
-  const indexOfElementPRG = result.indexOf(answer);
+  const indexOfElementPRG = result.indexOf(secretElement);
   result[indexOfElementPRG] = '..';
 
+  const answer = String(secretElement);
   const question = result.join(' ');
 
   return [question, answer];
